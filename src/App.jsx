@@ -1,4 +1,4 @@
-import Profile from "./сomponents/Profile/Profile";
+import Profile from "./сomponents/Profile/Profile.jsx";
 import FriendList from "./components/FriendList/FriendList";
 import userData from "./components/Profile/userData.json";
 import friends from "./components/FriendList/friends.json";

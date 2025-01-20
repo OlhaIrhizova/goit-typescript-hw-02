@@ -1,0 +1,22 @@
+.optionBtns{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding-bottom: 20px;
+    
+}
+.button{
+    padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0d7aef;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.button:hover,
+.button:focus,
+.button:active{
+    background-color: #5698de;
+}

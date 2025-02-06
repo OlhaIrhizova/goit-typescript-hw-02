@@ -1,0 +1,37 @@
+.container{
+padding: 20px;
+display: flex;
+justify-content: center;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 зображення в ряд */
+    gap: 15px; /* Відстань між зображеннями */
+    list-style: none;
+    max-width: 1200px;
+    padding: 0;
+}
+
+.galleryItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    height: 200px; /* Висота всіх елементів */
+    transition: transform 0.3s ease-in-out;
+   
+}
+.galleryItem:hover {
+    transform: scale(1.05);
+  }
+
+  galleryItem img {
+  max-width: 100%; /* Зображення заповнює всю ширину блоку */
+  max-height: 100%; /* Зображення заповнює всю висоту блоку */
+  object-fit: contain; /* Зображення залишається пропорційним і не обрізається */
+  border-radius: 10px;
+  }
+

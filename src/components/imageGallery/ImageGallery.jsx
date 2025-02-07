@@ -1,4 +1,4 @@
-import { ErrorMessage } from "formik";
+
 import ImageCard from "../imageCard/ImageCard";
 import Loader from "../loader/Loader";
 import css from "./ImageGallery.module.css"
@@ -18,8 +18,7 @@ const ImageGallery = ({images, onImageClick, isLoading, isError}) => {
                 </li>
               ))}
             </ul>
-            {isLoading && <Loader/>}
-            {isError && <ErrorMessage/>}
+            
             </div>
 
           );

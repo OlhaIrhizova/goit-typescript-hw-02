@@ -67,11 +67,12 @@ const App = () => {
   return (
     <div>
       <SearchBar onSubmit={handleSearch}/>
+      {isLoading && <Loader/>}
+      {isError && <ErrorMessage/>}
       <ImageGallery images={images} isLoading={isLoading} isError={isError} onImageClick={openModal}/>
       {images.length > 0 && <LoadMoreBtn onClick={() => setPage(prev => prev + 1)} />}
       <ImageModal isOpen ={isModalOpen} onClose={closeModal} image={selectedImage}/>
-      {isLoading && <Loader/>}
-      {isError && <ErrorMessage/>}
+     
     </div>
   )
 

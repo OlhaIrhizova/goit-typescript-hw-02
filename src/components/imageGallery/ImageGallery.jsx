@@ -1,9 +1,9 @@
 
 import ImageCard from "../imageCard/ImageCard";
-import Loader from "../loader/Loader";
 import css from "./ImageGallery.module.css"
 
-const ImageGallery = ({images, onImageClick, isLoading, isError}) => {
+
+const ImageGallery = ({images, onImageClick}) => {
     return (
         
             <div className={css.container}>

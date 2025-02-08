@@ -6,8 +6,8 @@ justify-content: center;
 
 .gallery{
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 зображення в ряд */
-    gap: 15px; /* Відстань між зображеннями */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; 
     list-style: none;
     max-width: 1200px;
     padding: 0;
@@ -20,7 +20,7 @@ justify-content: center;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    height: 200px; /* Висота всіх елементів */
+    height: 200px; 
     transition: transform 0.3s ease-in-out;
    
 }
@@ -29,9 +29,9 @@ justify-content: center;
   }
 
   galleryItem img {
-  max-width: 100%; /* Зображення заповнює всю ширину блоку */
-  max-height: 100%; /* Зображення заповнює всю висоту блоку */
-  object-fit: contain; /* Зображення залишається пропорційним і не обрізається */
+  max-width: 100%; 
+  max-height: 100%; 
+  object-fit: contain; 
   border-radius: 10px;
   }
 

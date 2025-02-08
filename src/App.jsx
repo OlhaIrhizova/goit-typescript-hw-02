@@ -70,7 +70,8 @@ const App = () => {
       {isLoading && images.length === 0 && <Loader />}
       {isError && <ErrorMessage/>}
       <ImageGallery images={images} isLoading={isLoading} isError={isError} onImageClick={openModal}/>
-      {images.length > 0 && isLoading ? <Loader /> : <LoadMoreBtn onClick={() => setPage(prev => prev + 1)} />}
+      {images.length > 0 && !isError && (
+  isLoading ? <Loader /> : <LoadMoreBtn onClick={() => setPage(prev => prev + 1)} />)}
       <ImageModal isOpen ={isModalOpen} onClose={closeModal} image={selectedImage}/>
      
     </div>

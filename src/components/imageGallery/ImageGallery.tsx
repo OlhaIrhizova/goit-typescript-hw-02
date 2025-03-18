@@ -1,9 +1,10 @@
 
 import ImageCard from "../imageCard/ImageCard";
 import css from "./ImageGallery.module.css"
+import { ImageGalleryProps } from "../app/App.types";
 
 
-const ImageGallery = ({images, onImageClick}) => {
+const ImageGallery: React.FC<ImageGalleryProps> = ({images, onImageClick}) => {
     return (
         
             <div className={css.container}>
@@ -12,8 +13,7 @@ const ImageGallery = ({images, onImageClick}) => {
                 <li key={image.id}  className={css.galleryItem}>
                   <ImageCard 
                   image={image} 
-                  alt = {image.description} 
-                  onClick={()=> onImageClick(image.urls.regular)} 
+                  onClick={()=> onImageClick(image)} 
                  />
                 </li>
               ))}

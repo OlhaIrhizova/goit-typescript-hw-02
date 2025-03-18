@@ -1,12 +1,13 @@
 import { useEffect, useState,  } from "react";
-import SearchBar from "./components/searchBar/SearchBar";
-import { fetchImages } from "./services/api";
-import ImageGallery from "./components/imageGallery/ImageGallery";
-import LoadMoreBtn from "./components/loadMoreBtn/LoadMoreBtn";
-import ImageModal from "./components/imageModal/ImageModal";
+import SearchBar from "../searchBar/SearchBar";
+import ImageGallery from "../imageGallery/ImageGallery"
+import LoadMoreBtn from "../loadMoreBtn/LoadMoreBtn";
+import ImageModal from "../imageModal/ImageModal";
 import Modal from 'react-modal';
-import ErrorMessage from "./components/errorMessage/ErrorMessage";
-import Loader from "./components/loader/Loader";
+import ErrorMessage from "../errorMessage/ErrorMessage";
+import Loader from "../loader/Loader";
+import { fetchImages } from "../../services/api";
+import { Image } from "./App.types";
 
 
 Modal.setAppElement("#root");
@@ -14,13 +15,13 @@ Modal.setAppElement("#root");
 
 
 const App = () => {
-  const [images, setImages] = useState([]);
-  const [query, setQuery] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [page, setPage] = useState(1);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [images, setImages] = useState<Image[]>([]);
+  const [query, setQuery] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedImage, setSelectedImage] = useState<Image|null>(null);
  
   
   
@@ -33,7 +34,7 @@ const App = () => {
   try {
   setIsLoading(true);
   setIsError(false);
-  const {results} = await fetchImages(query, page);
+  const results = await fetchImages(query, page);
   setImages(prev => [...prev, ...results]);
 
   }catch{
@@ -48,13 +49,13 @@ const App = () => {
   getData()
   },[query,page]);
 
-  const handleSearch = (newQuery) => {
+  const handleSearch = (newQuery:string) => {
     setQuery(newQuery);
     setImages([]); 
     setPage(1);
   };
 
-  const openModal = (image) => {
+  const openModal = (image:Image) => {
     setSelectedImage(image)
     setIsModalOpen(true)
   };

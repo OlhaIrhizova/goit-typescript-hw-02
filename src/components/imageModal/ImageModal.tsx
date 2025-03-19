@@ -1,7 +1,9 @@
 import Modal from 'react-modal';
 import css from './ImageModal.module.css';
+import { ImageModalProps } from '../app/App.types';
 
-const ImageModal = ({isOpen, onClose, image}) => {
+
+const ImageModal:React.FC<ImageModalProps> = ({isOpen, onClose, image}) => {
    
 return (
     <Modal

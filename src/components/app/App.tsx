@@ -73,11 +73,12 @@ const App = () => {
       <ImageGallery images={images} isLoading={isLoading} isError={isError} onImageClick={openModal}/>
       {images.length > 0 && !isError && (
   isLoading ? <Loader /> : <LoadMoreBtn onClick={() => setPage(prev => prev + 1)} />)}
-      <ImageModal isOpen ={isModalOpen} onClose={closeModal} image={selectedImage}/>
+      <ImageModal isOpen ={isModalOpen} onClose={closeModal} image={selectedImage ? selectedImage.urls.regular : null}/>
      
     </div>
   )
 
 }
+
 
 export default App;

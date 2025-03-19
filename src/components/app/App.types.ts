@@ -34,4 +34,17 @@ export interface AppState {
     image: Image;
     onClick: () => void;
   }
+
+  export interface ImageModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    image: string | null;
+  }
   
+  export interface LoadMoreBtnProps {
+    onClick: () => void;
+  }
+  
+  export interface SearchBarProps {
+    onSubmit: (query: string) => void;
+  }

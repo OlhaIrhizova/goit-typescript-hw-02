@@ -1,6 +1,7 @@
 import css from './LoadMoreBtn.module.css';
+import { LoadMoreBtnProps } from '../app/App.types';
 
-const LoadMoreBtn = ({onClick}) => {
+const LoadMoreBtn = ({onClick}:LoadMoreBtnProps) => {
     
 return (
 <div className={css.btnContainer}>

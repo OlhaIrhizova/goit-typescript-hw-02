@@ -1,13 +1,13 @@
 import {ColorRing} from 'react-loader-spinner';
 import css from './Loader.module.css'
 
-const Loader = () => {
+const Loader:React.FC = () => {
     return (
         <div className={css.loader}>
         <ColorRing
         visible={true}
-        height="80"
-        width="80"
+        height={80}
+        width={80}
         ariaLabel="color-ring-loading"
         wrapperStyle={{}}
         wrapperClass="color-ring-wrapper"
